@@ -6,4 +6,5 @@ This app "fixes" the common discord priority bug by constantly setting the prior
 2. Run discord-prio-fix as an admin.
 3. Enjoy!
 
-Notes: restart computer or end process from task manager to close.
+# notes
+restart computer or end process from task manager to close.
