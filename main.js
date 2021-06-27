@@ -26,6 +26,8 @@ function isAdmin() {
       setInterval(function () {
         setPriority('Discord.exe')
       }, 1000);
+    } else {
+      app.quit()
     }
   }
 }
