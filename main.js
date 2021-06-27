@@ -1,12 +1,29 @@
 const { app } = require('electron')
 const { execSync } = require('child_process')
+const memoryjs = require('memoryjs')
 
 app.on('ready', () => {
   isAdmin()
 });
 
 function setPriority(a) {
-  execSync('wmic process where name="' + a + '" Call setpriority 128').toString()
+  if (findDiscord()) {
+    execSync('wmic process where name="' + a + '" Call setpriority 128').toString()
+  } else {
+    app.quit()
+  }
+}
+
+function findDiscord() {
+  var processes = memoryjs.getProcesses()
+  var x = processes.filter(x => x.szExeFile == 'Discord.exe')
+  var bool;
+  if (x.length > 0) {
+    bool = true
+  } else {
+    bool = false
+  }
+  return bool
 }
 
 function isAdmin() {
