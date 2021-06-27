@@ -1,0 +1,27 @@
+{
+  "name": "tool-box",
+  "version": "0.0.3",
+  "description": "A minimal electron application.",
+  "main": "main.js",
+  "scripts": {
+    "server": "node server.js",
+    "client": "electron .",
+    "start": "electron .",
+    "build": "electron-packager . discord-prio-fix --overwrite --platform=win32",
+    "rebuild": "electron-rebuild -f -w main.js"
+  },
+  "repository": "https://github.com/omiinaya/system-tools",
+  "author": "Omar Minaya",
+  "license": "",
+  "devDependencies": {
+    "electron": "^11.3.0",
+    "electron-builder": "^22.10.5",
+    "electron-packager": "^15.2.0",
+    "electron-rebuild": "^2.3.5"
+  },
+  "dependencies": {
+    "@mh-cbon/aghfabsowecwn": "^2.0.4",
+    "update-electron-app": "^2.0.1",
+    "v8-compile-cache": "^2.3.0"
+  }
+}
