@@ -7,4 +7,6 @@ This app "fixes" the common discord priority bug by constantly setting the prior
 3. Enjoy!
 
 # notes
-restart computer or end process from task manager to close.
+-this is useful for people that experience laggy voice chats and/or straight up no mic output during cpu intensive games.
+
+-restart computer or end process from task manager to close.
