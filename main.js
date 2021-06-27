@@ -1,23 +1,31 @@
-const { app } = require('electron');
-//const { exec } = require('@mh-cbon/aghfabsowecwn')
-const { execSync, spawn, spawnSync } = require('child_process')
-
-var opts = {
-  bridgeTimeout: 5000,    
-  stdio: 'pipe',          
-  env: {
-    'FORCE_COLOR': 1,    
-    'DEBUG': '*'      
-  }
-}
+const { app } = require('electron')
+const { execSync } = require('child_process')
 
 app.on('ready', () => {
-  setInterval(function() {
-    setPriority('Discord.exe')
-  }, 1000);
+  isAdmin()
 });
 
 function setPriority(a) {
-  var output = execSync('wmic process where name="' + a + '" Call setpriority 128').toString()
-  console.log(output)
+  execSync('wmic process where name="' + a + '" Call setpriority 128').toString()
+}
+
+function isAdmin() {
+  var exception = false, x
+
+  try {
+    x = execSync('whoami /groups | find "S-1-16-12288"').toString().trim()
+  }
+
+  catch (error) {
+    exception = true
+    throw Error('Please open as administrator.')
+  }
+
+  finally {
+    if (!exception) {
+      setInterval(function () {
+        setPriority('Discord.exe')
+      }, 1000);
+    }
+  }
 }
