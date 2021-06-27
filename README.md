@@ -9,4 +9,4 @@ This app "fixes" the common discord priority bug by constantly setting the prior
 # notes
 -this is useful for people that experience laggy voice chats and/or straight up no mic output during cpu intensive games.
 
--restart computer or end process from task manager to close.
+-close discord to end the script.
